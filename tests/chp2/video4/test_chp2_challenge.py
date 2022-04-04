@@ -12,6 +12,9 @@ def test_invalid_point_generation():
         Point("Senegal", 99.6937, -189.44406)
     assert str(exp.value) == "Invalid latitude, longitude combination."
 
+    with pytest.raises(TypeError) as exp2:
+        Point(100, 50.8866, -40.39874)
+    assert str(exp2.value) == "Invalid input type of name"
     """
     Your solution here! You will need to edit the following source code
     file to get your test running:
